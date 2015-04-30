@@ -3,7 +3,7 @@
 // by Nisan and Schocken, MIT Press.
 // File name: projects/01/Or.hdl
 
- **
+/**
  * Or gate:
  * out = 1 if (a == 1 or b == 1)
  *       0 otherwise
@@ -14,5 +14,8 @@ CHIP Or {
     OUT out;
 
     PARTS:
+    Nand(a=a, b=a, out=outa);
+    Nand(a=b, b=b, out=outb);
+    Nand(a=outa, b=outb, out=out);
     // Put your code here:
 }
